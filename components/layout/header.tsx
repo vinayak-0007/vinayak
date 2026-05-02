@@ -5,14 +5,16 @@ import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/s
 
 export function Header() {
     const navItems = [
-        { name: "Home", href: "/" },
-        { name: "Projects", href: "/projects" },
-        { name: "About", href: "/about" },
-        { name: "Contact", href: "/contact" },
+        { name: "Home", href: "#hero" },
+        { name: "About", href: "#about" },
+        { name: "Projects", href: "#projects" },
+        { name: "Skills", href: "#skills" },
+        { name: "Education", href: "#education" },
+        { name: "Contact", href: "#contact" },
     ];
 
     return (
-        <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <header className="sticky top-0 z-50 w-full border-b border-white/20 bg-white/60 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60">
             <div className="container flex h-14 items-center justify-between">
                 <div className="flex items-center gap-2">
                     <Link href="/" className="font-bold text-xl tracking-tight">

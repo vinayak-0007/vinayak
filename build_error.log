@@ -1,0 +1,67 @@
+
+> portfolio@0.1.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+
+   Creating an optimized production build ...
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+   Generating static pages (0/5) ...
+   Generating static pages (1/5) 
+   Generating static pages (2/5) 
+   Generating static pages (3/5) 
+ ✓ Generating static pages (5/5)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Error occurred prerendering page "/404.html". Read more: https://nextjs.org/docs/messages/prerender-error
+
+PageNotFoundError: Cannot find module for page: /_document
+    at getPagePath (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/require.js:94:15)
+    at requirePage (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/require.js:99:22)
+    at /home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/load-components.js:71:33)
+    at async exportPageImpl (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/worker.js:177:28)
+    at async Span.traceAsyncFn (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/trace/trace.js:154:20)
+    at async Object.exportPage (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/worker.js:237:20)
+
+Error occurred prerendering page "/404". Read more: https://nextjs.org/docs/messages/prerender-error
+
+PageNotFoundError: Cannot find module for page: /_document
+    at getPagePath (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/require.js:94:15)
+    at requirePage (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/require.js:99:22)
+    at /home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/load-components.js:72:65
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/load-components.js:71:33)
+    at async exportPageImpl (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/worker.js:177:28)
+    at async Span.traceAsyncFn (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/trace/trace.js:154:20)
+    at async Object.exportPage (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/worker.js:237:20)
+
+Error occurred prerendering page "/_not-found". Read more: https://nextjs.org/docs/messages/prerender-error
+
+PageNotFoundError: Cannot find module for page: /_not-found/page
+    at getPagePath (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/require.js:94:15)
+    at requirePage (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/require.js:99:22)
+    at /home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/load-components.js:103:84
+    at async loadComponentsImpl (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/load-components.js:103:26)
+    at async exportPageImpl (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/worker.js:177:28)
+    at async Span.traceAsyncFn (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/trace/trace.js:154:20)
+    at async Object.exportPage (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/worker.js:237:20)
+
+> Build error occurred
+PageNotFoundError: Cannot find module for page: /favicon.ico/route
+    at getPagePath (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/server/require.js:94:15)
+    at /home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/index.js:565:55
+    at Array.map (<anonymous>)
+    at exportAppImpl (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/index.js:553:65)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async /home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/export/index.js:623:16
+    at async Span.traceAsyncFn (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/trace/trace.js:154:20)
+    at async writeFullyStaticExport (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/build/index.js:327:5)
+    at async /home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/build/index.js:2140:17
+    at async Span.traceAsyncFn (/home/it-admin/Desktop/projects/Practice/portfolio/node_modules/next/dist/trace/trace.js:154:20) {
+  code: 'ENOENT'
+}
