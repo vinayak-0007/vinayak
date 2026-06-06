@@ -1,33 +1,88 @@
 "use client";
 
+import { motion } from "framer-motion";
+import { MapPin, Calendar, Award, Code2 } from "lucide-react";
+
 export function SummarySection() {
+    const highlights = [
+        { icon: Calendar, label: "3+ Years", desc: "Professional Experience" },
+        { icon: Code2, label: "3+ Apps", desc: "In Production" },
+        { icon: Award, label: "2 Awards", desc: "Recognition at Quokka Labs" },
+    ];
+
     return (
-        <section id="about" className="py-20 bg-white/30 backdrop-blur-sm">
+        <section id="about" className="py-24 relative">
+            <div className="section-divider w-full absolute top-0" />
+
             <div className="container px-4 md:px-6">
-                <div className="grid gap-10 sm:px-10 md:gap-16 md:grid-cols-2">
-                    <div className="space-y-4">
-                        <div className="inline-flex items-center rounded-full border border-purple-200 bg-purple-50/50 px-3 py-1 text-sm font-medium text-purple-800 backdrop-blur-sm">
+                <div className="grid gap-12 md:gap-16 md:grid-cols-2 items-center">
+                    {/* Left — Text */}
+                    <motion.div
+                        initial={{ opacity: 0, x: -40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.7 }}
+                        className="space-y-6"
+                    >
+                        <div className="inline-flex items-center gap-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 px-4 py-1.5 text-sm font-medium text-cyan-400 backdrop-blur-sm">
                             About Me
                         </div>
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                            Passionate about creating purposeful web applications.
+                        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl text-foreground leading-tight">
+                            Crafting digital experiences that{" "}
+                            <span className="text-gradient">make an impact</span>
                         </h2>
-                        <p className="max-w-[600px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-                            I am a Frontend Developer with a focus on building high-quality, user-centric interfaces. With a strong background in modern web technologies, I love turning complex problems into simple, beautiful solutions.
+                        <p className="text-muted-foreground text-lg leading-relaxed">
+                            I&apos;m a <span className="text-foreground font-medium">Full Stack Engineer</span> at Quokka Labs, 
+                            where I architect and build high-performance web applications using modern JavaScript ecosystems. 
+                            With a strong foundation in React.js, Next.js, TypeScript, and Node.js, I specialize in turning 
+                            complex business requirements into elegant, scalable solutions.
                         </p>
-                        <p className="text-muted-foreground md:text-lg">
-                            My journey is driven by a desire to learn and create. Whether it&apos;s a small widget or a large-scale application, I approach every project with enthusiasm and attention to detail.
+                        <p className="text-muted-foreground text-lg leading-relaxed">
+                            From building full-stack rental platforms with payment integrations to 
+                            AI-powered content generators, I bring a unique blend of frontend finesse 
+                            and backend robustness to every project I undertake.
                         </p>
-                    </div>
-                    <div className="flex flex-col items-center justify-center space-y-4">
-                        <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-purple-100 shadow-xl">
-                            {/* Placeholder for Profile Photo */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-purple-100 to-pink-100 dark:from-purple-900 dark:to-pink-900 flex items-center justify-center text-muted-foreground">
-                                <span className="text-6xl filter grayscale hover:grayscale-0 transition-all duration-500">📷</span>
-                            </div>
-                            {/* <img src="/profile.jpg" alt="Profile" className="object-cover w-full h-full" /> */}
+                        <div className="flex items-center gap-2 text-muted-foreground">
+                            <MapPin className="w-4 h-4 text-cyan-400" />
+                            <span>Noida, Uttar Pradesh, India</span>
                         </div>
-                    </div>
+                    </motion.div>
+
+                    {/* Right — Stats/Highlights */}
+                    <motion.div
+                        initial={{ opacity: 0, x: 40 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, margin: "-100px" }}
+                        transition={{ duration: 0.7, delay: 0.2 }}
+                        className="space-y-6"
+                    >
+                        {highlights.map((item, i) => (
+                            <motion.div
+                                key={item.label}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: 0.3 + i * 0.1 }}
+                                className="glass-card p-6 flex items-center gap-5 group cursor-default"
+                            >
+                                <div className="p-3 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-violet-500/10 border border-white/5 group-hover:border-cyan-500/20 transition-colors duration-300">
+                                    <item.icon className="w-6 h-6 text-cyan-400" />
+                                </div>
+                                <div>
+                                    <div className="text-xl font-bold text-foreground">{item.label}</div>
+                                    <div className="text-sm text-muted-foreground">{item.desc}</div>
+                                </div>
+                            </motion.div>
+                        ))}
+
+                        {/* Decorative gradient orb */}
+                        <div className="relative h-32 flex items-center justify-center">
+                            <div className="absolute w-40 h-40 bg-gradient-to-br from-cyan-500/20 to-violet-600/20 rounded-full filter blur-3xl animate-float" />
+                            <div className="relative glass-card px-6 py-3 rounded-full text-sm text-muted-foreground">
+                                🎓 B.Tech CSE — JSS Academy, Noida (2019-2023)
+                            </div>
+                        </div>
+                    </motion.div>
                 </div>
             </div>
         </section>

@@ -18,6 +18,9 @@ const config = {
             },
         },
         extend: {
+            fontFamily: {
+                sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+            },
             colors: {
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
@@ -67,10 +70,30 @@ const config = {
                     from: { height: "var(--radix-accordion-content-height)" },
                     to: { height: "0" },
                 },
+                "float": {
+                    "0%, 100%": { transform: "translateY(0px)" },
+                    "50%": { transform: "translateY(-10px)" },
+                },
+                "glow-pulse": {
+                    "0%, 100%": { opacity: "0.4" },
+                    "50%": { opacity: "0.8" },
+                },
+                "slide-in-left": {
+                    from: { opacity: "0", transform: "translateX(-40px)" },
+                    to: { opacity: "1", transform: "translateX(0)" },
+                },
+                "slide-in-right": {
+                    from: { opacity: "0", transform: "translateX(40px)" },
+                    to: { opacity: "1", transform: "translateX(0)" },
+                },
             },
             animation: {
                 "accordion-down": "accordion-down 0.2s ease-out",
                 "accordion-up": "accordion-up 0.2s ease-out",
+                "float": "float 6s ease-in-out infinite",
+                "glow-pulse": "glow-pulse 4s ease-in-out infinite",
+                "slide-in-left": "slide-in-left 0.6s ease-out",
+                "slide-in-right": "slide-in-right 0.6s ease-out",
             },
         },
     },
